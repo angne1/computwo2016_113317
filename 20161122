@@ -1,0 +1,51 @@
+#include<iostream>
+#include<time.h>
+#include<cstdlib>
+using namespace std;
+
+int CShuffle(){
+
+//카드 섞기
+int Cardshuffle[52]={1,1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,6,6,6,6,7,7,7,8,8,8,8,9,9,9,9,10,10,10,10,11,11,11,11,12,12,12,12,13,13,13,13};
+int nDust,nSour,nTemp;
+srand(int(time(NULL)));
+for(int i=0; i<100; i++){nDust=rand()%50;nSour=rand()%50;nTemp = Cardshuffle[nDust];Cardshuffle[nDust] = Cardshuffle[nSour];Cardshuffle[nSour] = nTemp;}
+
+//카드 섞은거 보여주는 반복문
+for(int i = 0; i<51; i++){cout <<Cardshuffle[i]<<'\t';}
+cout<<endl;cout << "카드를 모두 섞었습니다." << endl;}
+int Menu_list(){cout << "1 : 시작 2: 종료" << endl;
+int select;
+cin >> select;
+
+switch(select){
+case 1:
+break;
+case 2:
+cout<< "end 2"<< endl;break;
+default:
+cout << "Entered another number"<< endl;
+return 1;}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
