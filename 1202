@@ -9,46 +9,46 @@ using namespace std;
 const int Maxcard = 52;
 
 
-class Carddeck{ //¼ıÀÚ 52°³ »ğÀÔ ¹× ¼ıÀÚ ¼ÅÇÃ Å¬·¡½º 
+class Carddeck{ //ìˆ«ì 52ê°œ ì‚½ì… ë° ìˆ«ì ì…”í”Œ í´ë˜ìŠ¤ 
 		
 	protected:
-		vector<int> cards;  //52°³ÀÇ ¼ıÀÚ¸¦ ³ÖÀ» º¤ÅÍ 
+		vector<int> cards;  //52ê°œì˜ ìˆ«ìë¥¼ ë„£ì„ ë²¡í„° 
 		int Num;
 	public:		
 		
 		Carddeck();
 			 
-		void CShuffle(); // ¼ÅÇÃÇÔ¼ö   
+		void CShuffle(); // ì…”í”Œí•¨ìˆ˜   
 		
 };
 
 	
-Carddeck::Carddeck(){ //52°³ ¼ıÀÚ ³Ö±â 
+Carddeck::Carddeck(){ //52ê°œ ìˆ«ì ë„£ê¸° 
 		Num=0;
 		
 		for(int j=0; j<4; j++){
 			for(int i=1; i<=13; i++){
 			cards.push_back(i);
-			Num++;   // ÇöÀç Ä«µåÀÇ °¹¼ö¸¦ Ç¥½ÃÇÏ´Â ÀÎÆ®Çü Num 
+			Num++;   // í˜„ì¬ ì¹´ë“œì˜ ê°¯ìˆ˜ë¥¼ í‘œì‹œí•˜ëŠ” ì¸íŠ¸í˜• Num 
 			  
 			}
 		}
 			for(int i=0;i<cards.size();i++)
 		cout << cards[i] << ' ';
-	  //Ãâ·Â¿ë »ı¼º È®ÀÎ  
+	  //ì¶œë ¥ìš© ìƒì„± í™•ì¸  
 	cout << endl;
 		
 		
-		CShuffle(); // ¼ÅÇÃÇÔ¼ö»ç¿ë 
+		CShuffle(); // ì…”í”Œí•¨ìˆ˜ì‚¬ìš© 
 		for(int i=0;i<cards.size();i++)
 		cout << cards[i] << ' ';
-	  //Ãâ·Â¿ë »ı¼ºÈ®ÀÎ 
+	  //ì¶œë ¥ìš© ìƒì„±í™•ì¸ 
 	cout << endl;
 		
 }
 
 void Carddeck::CShuffle(){
-	//Ä«µå ¼ÅÇÃ 
+	//ì¹´ë“œ ì…”í”Œ 
 	int nDust,nSour;	
 	srand(int(time(NULL)));
 		
@@ -58,12 +58,12 @@ void Carddeck::CShuffle(){
 		nSour=rand()%52;
 		swap(cards[nDust],cards[nSour]);
 	}
-	cout<<"¼ÅÇÃ"<<endl;
+	cout<<"ì…”í”Œ"<<endl;
 }
 
 
 
-class Playerdeck : public Carddeck{ //ÇÃ·¹ÀÌ¾î°¡ ¸ÔÀº ÆĞ °ü¸®(°¡Áø Ä«µå¸¦ º¸¿©ÁØ´Ù,ÆĞ¸¦ ¹Ş´Â´Ù.2°³,6°³) ¼ıÀÚ¸¦ ¾²±âÀ§ÇØ Carddeck »ó¼Ó 
+class Playerdeck : public Carddeck{ //í”Œë ˆì´ì–´ê°€ ë¨¹ì€ íŒ¨ ê´€ë¦¬(ê°€ì§„ ì¹´ë“œë¥¼ ë³´ì—¬ì¤€ë‹¤,íŒ¨ë¥¼ ë°›ëŠ”ë‹¤.2ê°œ,6ê°œ) ìˆ«ìë¥¼ ì“°ê¸°ìœ„í•´ Carddeck ìƒì† 
 	public :
 		Playerdeck();
 		Playerdeck(int num);
@@ -73,12 +73,12 @@ class Playerdeck : public Carddeck{ //ÇÃ·¹ÀÌ¾î°¡ ¸ÔÀº ÆĞ °ü¸®(°¡Áø Ä«µå¸¦ º¸¿©ÁØ
 }; 
 	
 Playerdeck::Playerdeck(int num){
-	cout<<"ÇÃ·¹ÀÌ¾îÀÇ ¼ö´Â:"<<num<<"¸íÀÔ´Ï´Ù."<<endl;
+	cout<<"í”Œë ˆì´ì–´ì˜ ìˆ˜ëŠ”:"<<num<<"ëª…ì…ë‹ˆë‹¤."<<endl;
 	playerdeck(num);
 }
 
 
-void Playerdeck::playerdeck(int num){ //ÀÎ¿øÃ¼Å© 
+void Playerdeck::playerdeck(int num){ //ì¸ì›ì²´í¬ 
 	if(num==2){
 		for(int i=0;i<2; i++){
 		
@@ -88,20 +88,20 @@ void Playerdeck::playerdeck(int num){ //ÀÎ¿øÃ¼Å©
 }
 
 
-void Playerdeck::Draw(){ //ÇÃ·¹ÀÌ¾î¿¡°Ô ¼ıÀÚ¸¦  6°³ ÁÖ°í ¼ıÀÚ¸¦ º¸¿©ÁØ´Ù. 
+void Playerdeck::Draw(){ //í”Œë ˆì´ì–´ì—ê²Œ ìˆ«ìë¥¼  6ê°œ ì£¼ê³  ìˆ«ìë¥¼ ë³´ì—¬ì¤€ë‹¤. 
  	
 	 
-	cout<<"ÇÃ·¹ÀÌ¾î°¡ Ã³À½ ¹Ş´Â Ä«µå: ";
+	cout<<"í”Œë ˆì´ì–´ê°€ ì²˜ìŒ ë°›ëŠ” ì¹´ë“œ: ";
 	for(int j=1; j<7; j++){
-	cout<<cards[Num-j]<<'\t';       //µÚ¿¡¼­ºÎÅÍ Ä«µå¸¦ ³ª´²ÁØ´Ù. 
-	cards.pop_back();               // Ä«µå¸¦ ³ª´²ÁØ¸¸Å­ pop! 
+	cout<<cards[Num-j]<<'\t';       //ë’¤ì—ì„œë¶€í„° ì¹´ë“œë¥¼ ë‚˜ëˆ ì¤€ë‹¤. 
+	cards.pop_back();               // ì¹´ë“œë¥¼ ë‚˜ëˆ ì¤€ë§Œí¼ pop! 
 	}
 	cout<<endl;
 	for(int i=0;i<cards.size();i++){
 	
 	cout << cards[i] << ' ';
 	}
-	cout<<endl;  //»ı¼ºÈ®ÀÎ 
+	cout<<endl;  //ìƒì„±í™•ì¸ 
 	
 	Num=Num-6;                    // Num
 	cout<<Num<<endl;
@@ -112,7 +112,7 @@ void Playerdeck::Draw(){ //ÇÃ·¹ÀÌ¾î¿¡°Ô ¼ıÀÚ¸¦  6°³ ÁÖ°í ¼ıÀÚ¸¦ º¸¿©ÁØ´Ù.
 		
 
 void Playerdeck::Givecard(bool s) {
-	cout<<"ÇÃ·¹ÀÌ¾î°¡ 2Àå ¹Ş´Â Ä«µå: ";
+	cout<<"í”Œë ˆì´ì–´ê°€ 2ì¥ ë°›ëŠ” ì¹´ë“œ: ";
 	if(s){
 	                  
 	for(int j=1; j<3; j++){
@@ -122,7 +122,7 @@ void Playerdeck::Givecard(bool s) {
 	cout<<endl;
 	for(int i=0;i<cards.size();i++)
 	cout << cards[i] << ' ';
-	  //»ı¼ºÈ®ÀÎ 
+	  //ìƒì„±í™•ì¸ 
 	cout << endl;
 	
 	Num=Num-2;
@@ -130,20 +130,20 @@ void Playerdeck::Givecard(bool s) {
 	cout<<Num<<endl;
 }
 	if(false){
-		cout<<"³ªÀÇ Â÷·ÊÀÔ´Ï´Ù."<<endl; 
+		cout<<"ë‚˜ì˜ ì°¨ë¡€ì…ë‹ˆë‹¤."<<endl; 
 	}
 		
 
 }
 
 
-class Game : public Playerdeck{ //½ÇÁ¦·Î °ÔÀÓÀÌ ÁøÇàµÇ´Â °÷.  
-								//¿©±â¼­ ÇÃ·¹ÀÌ¾î Ä«µå¸¦ Á÷Á¢ÀûÀ¸·Î »ç¿ëÇÏÁø ¾Ê´Â´Ù. 
+class Game : public Playerdeck{ //ì‹¤ì œë¡œ ê²Œì„ì´ ì§„í–‰ë˜ëŠ” ê³³.  
+								//ì—¬ê¸°ì„œ í”Œë ˆì´ì–´ ì¹´ë“œë¥¼ ì§ì ‘ì ìœ¼ë¡œ ì‚¬ìš©í•˜ì§„ ì•ŠëŠ”ë‹¤. 
 	public :
 	void Draw(){
-		Game::playerdeck(false);//ÇÃ·¹ÀÌ¾î Ä«µå Ãâ·ÂÀ» À§ÇØ playerdeck¿¡¼­ »ó¼Ó¹Ş¾Æ »ç¿ë 
+		Game::playerdeck(false);//í”Œë ˆì´ì–´ ì¹´ë“œ ì¶œë ¥ì„ ìœ„í•´ playerdeckì—ì„œ ìƒì†ë°›ì•„ ì‚¬ìš© 
 	
-	} //Ãß°¡ÇÒ°Í :ÇÃ·¹ÀÌ¾î°¡  Ä«µå¸¦ ³ÂÀ» ¶§ Ä«µåÀÇ °ªÀ» ÇÕ»êÇÏ¿© Ä«¿îÆ®  ,Ä«µå °ÔÀÓÀÇ¸ñÇ¥Ä¡ Ç¥½Ã 
+	} //ì¶”ê°€í• ê²ƒ :í”Œë ˆì´ì–´ê°€  ì¹´ë“œë¥¼ ëƒˆì„ ë•Œ ì¹´ë“œì˜ ê°’ì„ í•©ì‚°í•˜ì—¬ ì¹´ìš´íŠ¸  ,ì¹´ë“œ ê²Œì„ì˜ëª©í‘œì¹˜ í‘œì‹œ 
 };
 
 
