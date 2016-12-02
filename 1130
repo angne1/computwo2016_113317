@@ -10,16 +10,16 @@ const int Maxcard = 52;
 const int start =11;
 
 
-class Carddeck{ //¼ıÀÚ 52°³ »ğÀÔ ¹× Ä«µå ¼ÅÇÃ Å¬·¡½º 
+class Carddeck{ //ìˆ«ì 52ê°œ ì‚½ì… ë° ì¹´ë“œ ì…”í”Œ í´ë˜ìŠ¤ 
 	protected:
-		vector<int> cards; // Ä«µå º¤ÅÍ¹è¿­ 
+		vector<int> cards; // ì¹´ë“œ ë²¡í„°ë°°ì—´ 
 		
 	public:		
 		Carddeck();	
-		void CShuffle(); // ¼ÅÇÃÇÔ¼ö 
+		void CShuffle(); // ì…”í”Œí•¨ìˆ˜ 
 		Carddeck(bool a);
-		void Reset(bool a); // °ÔÀÓ Àç½ÇÇà¿¡ »ç¿ëµÉ ¸®¼ÂÇÔ¼ö  
-		void print(); //Ãâ·ÂÀ» À§ÇÑ ÇÔ¼ö 
+		void Reset(bool a); // ê²Œì„ ì¬ì‹¤í–‰ì— ì‚¬ìš©ë  ë¦¬ì…‹í•¨ìˆ˜  
+		void print(); //ì¶œë ¥ì„ ìœ„í•œ í•¨ìˆ˜ 
 };
 
 void Carddeck::print(){
@@ -32,7 +32,7 @@ void Carddeck::print(){
 Carddeck::Carddeck(bool a){
 	if(a){
 	
-	cout <<"»ı¼º"<<endl;  
+	cout <<"ìƒì„±"<<endl;  
 	cout<<cards.size()<<endl;
 	for(int j=0; j<4; j++){
 		for(int i=1; i<=13; i++){
@@ -48,27 +48,27 @@ Carddeck::Carddeck(bool a){
 		
 Carddeck::Carddeck(){
 	
-		cout <<"»ı¼º"<<endl; //»ı¼ºÈ®ÀÎ 
+		cout <<"ìƒì„±"<<endl; //ìƒì„±í™•ì¸ 
 		for(int j=0; j<4; j++){
 		for(int i=1; i<=13; i++){
-			cards.push_back(i); //52°³ÀÇ ¼ıÀÚ push 
+			cards.push_back(i); //52ê°œì˜ ìˆ«ì push 
 		}
 	}
-	CShuffle(); // ¼ÅÇÃÇÔ¼ö»ç¿ë 
+	CShuffle(); // ì…”í”Œí•¨ìˆ˜ì‚¬ìš© 
 	
-	cout<<cards.size()<<endl;		//¼ÅÇÃµÇ¾îÀÖ´ÂÁö È®ÀÎÇÏ´Â Ãâ·Â¹® 
+	cout<<cards.size()<<endl;		//ì…”í”Œë˜ì–´ìˆëŠ”ì§€ í™•ì¸í•˜ëŠ” ì¶œë ¥ë¬¸ 
 	for(int i=0;i<cards.size();i++)
 		cout << cards[i] << ' ';
 	cout << endl;
 
 	
-	cout<<cards.size()<<endl; // Ä«µå°³¼ö È®ÀÎ2 
+	cout<<cards.size()<<endl; // ì¹´ë“œê°œìˆ˜ í™•ì¸2 
 }
 
 
 
 void Carddeck::CShuffle(){
-	//Ä«µå ¼ÅÇÃ 
+	//ì¹´ë“œ ì…”í”Œ 
 	int nDust,nSour;	
 	srand(int(time(NULL)));
 		
@@ -88,7 +88,7 @@ void Carddeck::CShuffle(){
 
 
 /*
-class Game : Carddeck{ //Ä«µå¼ÅÇÃ,   
+class Game : Carddeck{ //ì¹´ë“œì…”í”Œ,   
 	public :
 		
 		void reset();
