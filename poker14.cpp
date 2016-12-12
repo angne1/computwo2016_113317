@@ -116,11 +116,12 @@ class Game : public PlayerDeck{ //실제로 게임이 진행되는 클래스
 	int Sum();
 	
 };
+
 int Game::Sum(){
 	int sum;
 	for(it=temp.begin();it<temp.end(); it++){
 		sum=sum+*it;
-			cout<<"중간결과:"<<sum<<endl; 
+	
 	}
 	return sum;
 }
@@ -188,7 +189,7 @@ for(int i=0; i<B.cards.size();i++){
  			cout<<B.cards[i]<<'\t';
 }
 */
-cout<<endl;
+	cout<<endl;
 		
  	C.GiveNum();
 	C.Draw(); 
